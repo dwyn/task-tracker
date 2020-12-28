@@ -40,7 +40,15 @@ end
 
 group :development do
   gem "better_errors"
-  gem "binding_of_caller"
+  # gem "binding_of_caller"
+
+  #! Because of Ruby v3
+  gem 'debug_inspector', git: 'https://github.com/banister/debug_inspector.git'
+  gem 'binding_of_caller', git: 'https://github.com/walski/binding_of_caller.git', branch: 'ruby-3'
+  #! # Because of Ruby v3
+
+
+
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
