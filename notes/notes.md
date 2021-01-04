@@ -1,10 +1,4 @@
-Overview:
-
-We’d like you to build a task-tracking application. You’ll do some preparation work ahead of time to get your application at a good starting point. During your live code day, you’ll work with our team to complete the project. At the end of the day, you'll present to our team what you accomplished, and you'll have the chance to ask questions and get to know the team better.
-
-Before You Arrive:
-
-During your code day, you'll build an application for tracking task work on projects. To make the most of your time on-site, we'd like you to arrive with some basic functionality already up and running. To prepare for the project:
+To prepare for the project:
 
 • Set up your laptop and get a web framework running
 • Configure a database connection and a schema based on the attached schema diagram

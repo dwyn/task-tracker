@@ -32,6 +32,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'activeadmin'
 gem 'simple_form'
+gem 'activerecord_reset_pk_sequence'
+gem 'populator'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
