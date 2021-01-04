@@ -15,6 +15,7 @@ To prepare for the project:
 
 ## Seed your database with projects, customers and tasks (no admin interface is necessary)
 - Definitely use Faker?
+https://github.com/ryanb/populator
 - ActiveAdmin for admin interface, IF I have enough time and bandwidth
 
 ## Implement the ability for users to log how much time they work on a task
