@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+// @import "~bootstrap/scss/bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap/theme';
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :projects
   resources :tasks
   # resources :users
   # get 'home/index'
   root 'home#index'
-  devise_for :users
   resources :customers
 end

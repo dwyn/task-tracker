@@ -33,8 +33,11 @@ gem 'cancancan'
 gem 'activeadmin'
 gem 'simple_form'
 gem 'activerecord_reset_pk_sequence'
-gem 'populator'
 gem 'faker'
+gem 'font-awesome-rails', '~>4.x'
+gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'

@@ -1,21 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 25px; margin-top: 20px; margin-bottom: 20px; border-style: solid;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 10px; margin-top: 20px; margin-bottom: 20px; border-style: solid;">
+
+  <%= link_to 'Home', root_path, class:"btn btn-secondary", style:"margin-right: 2px; float: left;"  %>
 
   <% if user_signed_in? %>
-    <%= link_to 'Customer Index', customers_path, class:"btn btn-primary", style:"margin-right: 10px;"  %>
-    <%= link_to 'New Customer', new_customer_path, class:"btn btn-primary", style:"margin-right: 10px;"  %>
+    <%= link_to 'Customer Index', customers_path, class:"btn btn-primary", style:"margin-right: 2px; float: left;"  %>
+    <%= link_to 'New Customer', new_customer_path, class:"btn btn-primary", style:"margin-right: 2px; float: left;"  %>
     <%#= link_to 'Edit Customer', edit_customer_path(@customer), class:"btn btn-primary", style:"margin-right: 10px;"  %>
 
-    <%= link_to 'Project Index', customers_path, class:"btn btn-primary", style:"margin-right: 10px;"  %>
-    <%= link_to 'New Project', new_project_path, class:"btn btn-primary", style:"margin-right: 10px;"  %>
+    <%= link_to 'Project Index', customers_path, class:"btn btn-primary", style:"margin-right: 2px; float: left;"  %>
+    <%= link_to 'New Project', new_project_path, class:"btn btn-primary", style:"margin-right: 2px; float: left;"  %>
     <%#= link_to 'Edit Project', edit_project_path(@project), class:"btn btn-primary", style:"margin-right: 10px;"  %>
 
-    <%= link_to 'Task Index', tasks_path, class:"btn btn-primary", style:"margin-right: 10px;"  %>
-    <%= link_to 'New Task', new_task_path, class:"btn btn-primary", style:"margin-right: 10px;"  %>
+    <%= link_to 'Task Index', tasks_path, class:"btn btn-primary", style:"margin-right: 2px; float left;"  %>
+    <%= link_to 'New Task', new_task_path, class:"btn btn-primary", style:"margin-right: 2px; float: left;"  %>
     <%#= link_to 'Edit Task', edit_task_path(@task), class:"btn btn-primary", style:"margin-right: 10px;"  %>
 
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"btn btn-primary", style:"margin-right: 10px; float: right;"  %>
+    <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class:"btn btn-primary", style:"margin-right: 2px; float: right;"  %>
   <% else %>
-    <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-primary", style:"margin-left: 10px; margin-right: 10px; float: right;" %>
-    <%= link_to 'Sign In', new_user_session_path, class:"btn btn-primary", style:"margin-left: 10px; float: right;"%>
+    <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-primary", style:"margin-left: 10px; margin-right: 2px; float: right;" %>
+    <%= link_to 'Sign In', new_user_session_path, class:"btn btn-primary", style:"margin-left: 2px; float: right;"%>
   <% end %>
 </nav>

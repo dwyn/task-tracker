@@ -2,17 +2,23 @@
 <html>
   <head>
     <title>TaskTracker</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <title><%= content_for?(:title) ? yield(:title) : "Task Tracker" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tracking tasks is fun🤓" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'layouts/navbar'%>
+    <header>
+      <%= render 'layouts/navbar'%>
+    </header>
+
+    <main role="main">
     <%= render 'layouts/alerts'%>
-    <%= yield %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
   </body>
 </html>
