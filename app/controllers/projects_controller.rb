@@ -25,8 +25,8 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+    # binding.pry
     @project = Project.new(project_params)
-
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -70,6 +70,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.fetch(:project, {})
+      params.require(:project).permit(:name, :customer_id)
+      # params.fetch(:project, {})
     end
 end

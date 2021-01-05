@@ -1,14 +1,14 @@
-<%= simple_form_for(@project) do |f| %>
+
+<%= simple_form_for(@tasks_log) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :customer_id, collection: Customer.all %>
-    <%= f.input :name %>
-
+    <%= f.input :start_date %>
+    <%= f.input :start_date %>
   </div>
 
-  <div class="form-actions btn btn-xs btn-success">
+  <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>

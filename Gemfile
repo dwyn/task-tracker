@@ -29,14 +29,13 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem "rolify"
 gem 'devise'
-gem 'cancancan'
+# gem 'cancancan'
 gem 'activeadmin'
 gem 'simple_form'
 gem 'activerecord_reset_pk_sequence'
 gem 'faker'
 gem 'font-awesome-rails', '~>4.x'
 gem 'bootstrap', '~> 4.3.1'
-gem 'bootstrap-sass'
 
 
 group :development, :test do

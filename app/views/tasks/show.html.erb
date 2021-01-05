@@ -1,4 +1,21 @@
 <p id="notice"><%= notice %></p>
+<h1 class="display-1">Task Show Page!</h1>
+<br>
+<h2 class="display-2">Project: <%= @task.project.name %></h2>
+<br>
+<h4 class="display-4">Task Description: <%= @task.description %></h4>
+<br><br>
+
+<% if @tasks_log && @tasks_log.duration == nil && @tasks_log.start_date != nil %>
+<% t = Time.at(Time.now - @tasks_log.start_date).utc %> 
+<% output = "#{t.hour} hours, #{t.min} minutes, #{t.sec} seconds, #{((t - t.floor) * 1000).floor} milliseconds." %> 
+
+  <h4>You've been working on this for <%= output %></h4><%= button_to "End Task?", task_tasks_log_path(@task, @tasks_log), method: :patch%>
+<% else %>
+  <%= button_to "Start Task", task_tasks_logs_path(@task) %>
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

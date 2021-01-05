@@ -3,7 +3,9 @@ class CreateTasksLogs < ActiveRecord::Migration[6.1]
     create_table :tasks_logs do |t|
       t.belongs_to :task, null: false, foreign_key: true
       t.belongs_to :user, null: false, foreign_key: true
-      t.integer :duration_minutes
+      t.float :duration
+      t.datetime :start_date
+      t.datetime :end_date
 
       t.timestamps
     end

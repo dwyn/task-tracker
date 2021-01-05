@@ -4,17 +4,27 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
+    #! before action to load all tasks relative to a user?
+    #! perhaps an AR scope-method to load tasks specific to a user?
+    #! consider pagination
     @tasks = Task.all
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    # binding.pry
+    if !(@task.tasks_logs.empty?)
+      @tasks_log = @task.tasks_logs.last
+    else
+      @tasks_log = TasksLog.new
+    end
   end
 
   # GET /tasks/new
   def new
     @task = Task.new
+    @task.tasks_logs.build
   end
 
   # GET /tasks/1/edit
@@ -25,6 +35,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+    binding.pry
     @task = Task.new(task_params)
 
     respond_to do |format|
@@ -70,6 +81,11 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.fetch(:task, {})
+      # params.fetch(:task, {})
+      params.require(:task).permit(:description, :project_id, tasks_logs_attributes:[:duration_minutes, :user_id])
     end
 end
+
+#! NEXT UP, FIX THE SHOW PAGES
+#! NEXT UP, FIX THE INDEX PAGES
+#! NEXT UP, DOUBLE CHECK ALL THE FORMS

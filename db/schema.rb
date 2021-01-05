@@ -41,7 +41,9 @@ ActiveRecord::Schema.define(version: 2020_12_28_014220) do
   create_table "tasks_logs", force: :cascade do |t|
     t.bigint "task_id", null: false
     t.bigint "user_id", null: false
-    t.integer "duration_minutes"
+    t.float "duration"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["task_id"], name: "index_tasks_logs_on_task_id"

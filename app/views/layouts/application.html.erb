@@ -11,14 +11,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="container">
     <header>
       <%= render 'layouts/navbar'%>
     </header>
 
     <main role="main">
-    <%= render 'layouts/alerts'%>
-    <%= content_for?(:content) ? yield(:content) : yield %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>
 </html>
